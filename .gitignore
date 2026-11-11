@@ -2,3 +2,8 @@
 *.class
 __pycache__/
 node_modules/
+practice/
+
+# Added by cargo
+
+/target
