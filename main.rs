@@ -2,21 +2,20 @@ use std::io::{self, BufRead};
 
 fn main() {
     let stdin = io::stdin();
-    let mut lines = stdin.lock().lines();
-    let first = lines.next().unwrap().unwrap();
-    let second = lines.next().unwrap().unwrap();
+    let mut iter = stdin.lock().lines();
+    let w: i64 = iter.next().unwrap().unwrap().trim().parse().unwrap();
+    let h: i64 = iter.next().unwrap().unwrap().trim().parse().unwrap();
+    let k: i64 = iter.next().unwrap().unwrap().trim().parse().unwrap();
+    // TODO: compute the area, each person's whole share, and the leftover,
+    // then print those three numbers instead of the zeros below.
+    let _ = (w, h, k);
 
-    // TODO: shadow `first` and `second` as i64 numbers (the text may have spaces around it).
-    // TODO: keep a mutable running total starting at 0; add each number and print the total after each addition.
-    let _ = (&first, &second);
+    let area=w*h;
 
-    let first=first.trim();
-    let first: i64=first.parse().unwrap();
-    let second=second.trim();
-    let second: i64=second.parse().unwrap();
-    let mut total=0;
-    total+=first;
-    println!("{}", total);
-    total+=second;
-    println!("{}", total);
+    let person_area=area/k;
+    let rest_area=area%k;
+
+    println!("{}", area);
+    println!("{}", person_area);
+    println!("{}", rest_area);
 }
