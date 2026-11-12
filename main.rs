@@ -10,8 +10,8 @@ fn main() {
     //   3. how many bytes it has
     let trimmed: &str=line.trim();
     let upper: String=trimmed.to_uppercase();
-    let count=upper.chars().count();
-    let byte=upper.len();
+    let count=line.chars().count();
+    let byte=line.len();
     println!("{}", upper);
     println!("{}", count);
     println!("{}", byte);
